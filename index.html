@@ -1,190 +1,539 @@
 <!DOCTYPE html>
+
 <html lang=«ru»>
+
 <head>
-<meta charset=«UTF-8»>
-<meta name=«viewport» content=«width=device-width, initial-scale=1»>
-<title>KRAVMA WEAR SHOP</title>
-<style>
-:root {
-  color-scheme: dark;
-  —bg: #080808;
-  —card: #151515;
-  —green: #c8ff00;
-  —white: #f5f5f5;
-  —muted: #a0a0a0;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(—bg);
-  color: var(—white);
-  font-family: Arial, Helvetica, sans-serif;
-}
-header {
-  padding: 22px 6%;
-  border-bottom: 1px solid #292929;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.logo { font-size: 21px; font-weight: 900; letter-spacing: 1.5px; }
-.logo span, .accent { color: var(—green); }
-.tag { color: var(—green); font-size: 10px; letter-spacing: 2px; }
-.hero { padding: 75px 6% 55px; }
-.eyebrow { color: var(—green); font-size: 11px; letter-spacing: 4px; }
-h1 { margin: 22px 0; font-size: clamp(44px, 10vw, 92px); line-height: .94; letter-spacing: -3px; }
-h1 span { color: var(—green); }
-.hero p { max-width: 450px; color: var(—muted); line-height: 1.7; }
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 22px;
-  background: var(—green);
-  color: #080808;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-section { padding: 30px 6% 55px; }
-.section-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-h2 { font-size: 25px; }
-.section-head span { color: var(—green); font-size: 10px; letter-spacing: 2px; }
-.categories { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 26px; }
-.category {
-  padding: 11px 14px;
-  border: 1px solid #393939;
-  background: transparent;
-  color: var(—white);
-  cursor: pointer;
-}
-.category.active, .category:hover {
-  background: var(—green);
-  border-color: var(—green);
-  color: #080808;
-}
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.product { min-width: 0; padding: 13px; background: var(—card); border: 1px solid #292929; }
-.art {
-  min-height: 130px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #202020;
-  font-size: 55px;
-}
-.product small { color: var(—green); font-size: 10px; letter-spacing: 1px; }
-.product h3 { font-size: 15px; }
-.product p { min-height: 34px; color: var(—muted); font-size: 12px; line-height: 1.5; }
-.price { margin: 14px 0; font-size: 13px; font-weight: bold; }
-.order {
-  display: block;
-  padding: 13px 5px;
-  background: var(—green);
-  color: #080808;
-  text-align: center;
-  text-decoration: none;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-.note { color: var(—muted); font-size: 13px; line-height: 1.9; }
-footer { padding: 28px 6%; border-top: 1px solid #292929; color: var(—muted); font-size: 11px; line-height: 1.9; }
-footer strong { color: var(—green); }
-min-width: 700px {
-  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-  .art { min-height: 180px; }
-}
-</style>
+
+  <meta charset=«UTF-8»>
+
+  <meta name=«viewport» content=«width=device-width, initial-scale=1.0»>
+
+  <meta name=«theme-color» content=«#080808»>
+
+  <title>KRAVMA WEAR SHOP</title>
+
+  <style>
+
+    :root {
+
+      —bg: #080808;
+
+      —card: #151515;
+
+      —green: #c8ff00;
+
+      —white: #f5f5f5;
+
+      —muted: #a0a0a0;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      background: #080808;
+
+      color: #f5f5f5;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    header {
+
+      padding: 22px 6%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 16px;
+
+      border-bottom: 1px solid #292929;
+
+    }
+
+    .logo {
+
+      font-size: 20px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+    }
+
+    .logo span {
+
+      color: #c8ff00;
+
+    }
+
+    .hero {
+
+      padding: 85px 6% 75px;
+
+      text-align: center;
+
+      background: radial-gradient(ellipse at top, #202020 0%, #080808 68%);
+
+    }
+
+    .tag {
+
+      color: #c8ff00;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      letter-spacing: 4px;
+
+    }
+
+    h1 {
+
+      margin: 20px 0;
+
+      font-size: clamp(38px, 8vw, 76px);
+
+      line-height: 1.02;
+
+      font-weight: 900;
+
+    }
+
+    h1 span {
+
+      color: #c8ff00;
+
+    }
+
+    .hero p {
+
+      color: #a0a0a0;
+
+      line-height: 1.7;
+
+      max-width: 520px;
+
+      margin: 0 auto 28px;
+
+    }
+
+    .btn {
+
+      display: inline-block;
+
+      padding: 16px 26px;
+
+      border: 0;
+
+      border-radius: 5px;
+
+      background-color: #c8ff00;
+
+      color: #080808;
+
+      font-size: 13px;
+
+      font-weight: 900;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      transition: transform .2s, background-color .2s;
+
+    }
+
+    .btn:hover {
+
+      background-color: #dcff66;
+
+      transform: translateY(-2px);
+
+    }
+
+    .section {
+
+      padding: 55px 6%;
+
+    }
+
+    .section-title {
+
+      margin: 0 0 10px;
+
+      font-size: 30px;
+
+      font-weight: 900;
+
+    }
+
+    .section-subtitle {
+
+      color: #a0a0a0;
+
+      margin: 0 0 28px;
+
+    }
+
+    .categories {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-bottom: 30px;
+
+    }
+
+    .category {
+
+      padding: 10px 16px;
+
+      border: 1px solid #393939;
+
+      border-radius: 4px;
+
+      background: #151515;
+
+      color: #f5f5f5;
+
+      font-size: 13px;
+
+    }
+
+    .category.active {
+
+      background: #c8ff00;
+
+      border-color: #c8ff00;
+
+      color: #080808;
+
+      font-weight: bold;
+
+    }
+
+    .products {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      gap: 18px;
+
+    }
+
+    .product {
+
+      overflow: hidden;
+
+      border: 1px solid #292929;
+
+      border-radius: 8px;
+
+      background: #151515;
+
+    }
+
+    .product-image {
+
+      min-height: 175px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: linear-gradient(145deg, #222, #101010);
+
+      font-size: 65px;
+
+    }
+
+    .product-info {
+
+      padding: 20px;
+
+    }
+
+    .product-info h3 {
+
+      margin: 0 0 9px;
+
+      font-size: 17px;
+
+    }
+
+    .product-info p {
+
+      min-height: 34px;
+
+      margin: 0 0 18px;
+
+      color: #a0a0a0;
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+    }
+
+    .order {
+
+      display: block;
+
+      width: 100%;
+
+      padding: 13px 10px;
+
+      border: 0;
+
+      border-radius: 4px;
+
+      background-color: #c8ff00;
+
+      color: #080808;
+
+      font-weight: 900;
+
+      text-align: center;
+
+      text-decoration: none;
+
+    }
+
+    .order:hover {
+
+      background-color: #dcff66;
+
+    }
+
+    .about {
+
+      border-top: 1px solid #292929;
+
+      border-bottom: 1px solid #292929;
+
+      background: #101010;
+
+    }
+
+    .about p {
+
+      max-width: 680px;
+
+      color: #b0b0b0;
+
+      line-height: 1.8;
+
+    }
+
+    footer {
+
+      padding: 28px 6%;
+
+      color: #888;
+
+      font-size: 12px;
+
+      text-align: center;
+
+    }
+
+  @media (max-width: 700px) {
+    .products {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+
+      }
+
+      .product-image {
+
+        min-height: 130px;
+
+        font-size: 48px;
+
+      }
+
+      .product-info {
+
+        padding: 14px;
+
+      }
+
+      .product-info h3 {
+
+        font-size: 15px;
+
+      }
+
+      .section {
+
+        padding: 40px 5%;
+
+      }
+
+      .hero {
+
+        padding: 65px 5%;
+
+      }
+
+    }
+
+   @media (max-width: 390px) {
+
+      .products {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
-<header>
-  <div class=«logo»>KRAVMA<span>®</span></div>
-  <div class=«tag»>WEAR SHOP</div>
-</header>
-<main>
-  <div class=«hero»>
-    <div class=«eyebrow»>YOUR STYLE. YOUR CHOICE.</div>
-    <h1>FIND YOUR
-<span>STYLE.</span></h1>
-    <p>Одежда, кроссовки и аксессуары для твоего стиля. Выбирай категорию и напиши нам, чтобы узнать цену и наличие.</p>
-    <a class=«btn» href=«#catalog»>СМОТРЕТЬ КАТАЛОГ ↓</a>
-  </div>
-  <section id=«catalog»>
-    <div class=«section-head»>
-      <h2>КАТАЛОГ</h2>
-      <span>KRAVMA WEAR</span>
-    </div>
-    <div class=«categories»>
-      <button class=«category active» data-filter=«all»>ВСЁ</button>
-      <button class=«category» data-filter=«shoes»>ОБУВЬ</button>
-      <button class=«category» data-filter=«clothes»>ОДЕЖДА</button>
-      <button class=«category» data-filter=«accessories»>АКСЕССУАРЫ</button>
-    </div>
-    <div class=«grid»>
-      <article class=«product» data-category=«shoes»>
-        <div class=«art»>👟</div>
-        <small>FOOTWEAR / 001</small>
-        <h3>Кроссовки</h3><p>Найди пару под свой повседневный стиль.</p>
-        <div class=«price»>Цена по запросу</div>
-        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-      </article>
-      <article class=«product» data-category=«clothes»>
-        <div class=«art»>👕</div>
-        <small>APPAREL / 002</small>
-        <h3>Одежда</h3>
-        <p>Базовые вещи и образы на каждый день.</p>
-        <div class=«price»>Цена по запросу</div>
-        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-      </article>
-      <article class=«product» data-category=«accessories»>
-        <div class=«art»>🧢</div>
-        <small>ACCESSORIES / 003</small>
-        <h3>Аксессуары</h3>
-        <p>Детали, которые дополняют твой образ.</p>
-        <div class=«price»>Цена по запросу</div>
-        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-      </article>
-      <article class=«product» data-category=«shoes»>
-        <div class=«art»>👟</div>
-        <small>SPORT / 004</small>
-        <h3>Спортивная обувь</h3>
-        <p>Выбирай модель, размер и цвет.</p>
-        <div class=«price»>Цена по запросу</div>
-        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-      </article>
-    </div>
-  </section>
-  <section>
-    <h2>КАК ЗАКАЗАТЬ</h2>
-    <p class=«note»>01 — Выбери категорию.<br
-— Нажми «Заказать».<br
-— Уточним цену, размер и доставку.</p>
-    <a class=«btn» href=«https://t.me/KravPoizonShopBot»>ОТКРЫТЬ В TELEGRAM ↗</a>
-  </section>
-</main>
-<footer>
-  <strong>KRAVMA WEAR SHOP</strong><br
-YOUR STYLE. YOUR CHOICE.<br
-Цены и наличие уточняются перед заказом.
-</footer>
-<script>
-document.querySelectorAll(‘.category’).forEach(function(button) {
-  button.addEventListener(‘click’, function() {
-    document.querySelectorAll(‘.category’).forEach(function(item) {
-      item.classList.remove(‘active’);
-    });
-    button.classList.add(‘active’);
-    var filter = button.dataset.filter;
-    document.querySelectorAll(‘.product’).forEach(function(product) {
-      product.style.display =
-        filter === ‘all’ || product.dataset.category === filter ? ‘’ : ‘none’;
-    });
-  });
-});
-</script>
+
+  <header>
+
+    <div class=«logo»>KRAVMA <span>WEAR</span></div>
+
+    <a class=«btn» href=«#catalog»>КАТАЛОГ</a>
+
+  </header>
+
+  <main>
+
+    <section class=«hero»>
+
+      <div class=«tag»>YOUR STYLE. YOUR RULES.</div>
+
+      <h1>KRAVMA
+<span>WEAR SHOP</span></h1>
+
+      <p>Кроссовки, одежда и аксессуары для твоего стиля. Выбирай свой образ вместе с KRAVMA.</p>
+
+      <a class=«btn» href=«#catalog»>СМОТРЕТЬ КАТАЛОГ</a>
+
+    </section>
+
+    <section class=«section» id=«catalog»>
+
+      <h2 class=«section-title»>КАТАЛОГ</h2>
+
+      <p class=«section-subtitle»>Выбирай то, что подходит именно тебе.</p>
+
+      <div class=«categories»>
+
+        <span class=«category active»>ВСЁ</span>
+
+        <span class=«category»>КРОССОВКИ</span>
+
+        <span class=«category»>ОДЕЖДА</span>
+
+        <span class=«category»>АКСЕССУАРЫ</span>
+
+      </div>
+
+      <div class=«products»>
+
+        <article class=«product»>
+
+          <div class=«product-image»>👟</div>
+
+          <div class=«product-info»>
+
+            <h3>Кроссовки</h3>
+
+            <p>Стильная пара для твоего образа.</p>
+
+            <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ</a>
+
+          </div>
+
+        </article>
+
+        <article class=«product»>
+
+          <div class=«product-image»>👕</div>
+
+          <div class=«product-info»>
+
+            <h3>Одежда</h3>
+
+            <p>Базовые вещи и уличный стиль.</p>
+
+            <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ</a>
+
+          </div>
+
+        </article>
+
+        <article class=«product»>
+
+          <div class=«product-image»>🧢</div>
+
+          <div class=«product-info»>
+
+            <h3>Аксессуары</h3>
+
+            <p>Детали, которые завершают образ.</p>
+
+            <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ</a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class=«section about»>
+
+      <h2 class=«section-title»>ПОЧЕМУ KRAVMA?</h2>
+
+      <p>Собирай свой стиль, выбирай любимые вещи и оформляй заказ через наш Telegram-бот. Актуальные модели и цены уточняй перед покупкой.</p>
+
+      <a class=«btn» href=«https://t.me/KravPoizonShopBot»>НАПИСАТЬ НАМ</a>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    © 2026 KRAVMA WEAR SHOP. ALL RIGHTS RESERVED.
+
+  </footer>
+
 </body>
+
 </html>
