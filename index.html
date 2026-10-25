@@ -6,55 +6,75 @@
 
   <meta charset=«UTF-8»>
 
-  <meta name=«viewport» content=«width=device-width, initial-scale=1.0»>
+  <meta name=«viewport» content=«width=device-width, initial-scale=1»>
 
-  <meta name=«theme-color» content=«#080808»>
+  <meta name=«theme-color» content=«#090909»>
 
-  <title>KRAVMA WEAR SHOP</title>
+  <meta name=«description» content=«KRAVMA WEAR SHOP — одежда, кроссовки и аксессуары. Найди свой стиль.»>
+
+  <title>KRAVMA WEAR SHOP — Your Style. Your Rules.</title>
 
   <style>
 
     :root {
 
-      —bg: #080808;
+      —bg: #090909;
 
-      —card: #151515;
+      —panel: #141414;
+
+      —line: #292929;
 
       —green: #c8ff00;
 
       —white: #f5f5f5;
 
-      —muted: #a0a0a0;
+      —muted: #999;
 
     }
 
-    * {
+    * { box-sizing: border-box; }
 
-      box-sizing: border-box;
-
-    }
-
-    html {
-
-      scroll-behavior: smooth;
-
-    }
+    html { scroll-behavior: smooth; }
 
     body {
 
       margin: 0;
 
-      background: #080808;
+      background: var(—bg);
 
-      color: #f5f5f5;
+      color: var(—white);
 
       font-family: Arial, Helvetica, sans-serif;
 
     }
 
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select, textarea { font: inherit; }
+
+    button { cursor: pointer; }
+
+    .wrap { width: min(1200px, 90%); margin: auto; }
+
     header {
 
-      padding: 22px 6%;
+      position: sticky;
+
+      top: 0;
+
+      z-index: 10;
+
+      background: rgba(9,9,9,.94);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom: 1px solid var(—line);
+
+    }
+
+    .nav {
+
+      min-height: 76px;
 
       display: flex;
 
@@ -62,177 +82,290 @@
 
       justify-content: space-between;
 
-      gap: 16px;
-
-      border-bottom: 1px solid #292929;
+      gap: 20px;
 
     }
 
     .logo {
 
-      font-size: 20px;
+      font-size: 21px;
 
-      font-weight: 900;
+      font-weight: 1000;
 
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
 
-    }
-
-    .logo span {
-
-      color: #c8ff00;
+      white-space: nowrap;
 
     }
 
-    .hero {
+    .logo span { color: var(—green); }
 
-      padding: 85px 6% 75px;
+    .nav-links { display: flex; align-items: center; gap: 25px; }
 
-      text-align: center;
+    .nav-links a { color: #ccc; font-size: 13px; }
 
-      background: radial-gradient(ellipse at top, #202020 0%, #080808 68%);
+    .nav-links a:hover { color: var(—green); }
 
-    }
+    .btn {
 
-    .tag {
+      display: inline-flex;
 
-      color: #c8ff00;
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 14px 20px;
+
+      border: 1px solid var(—green);
+
+      border-radius: 3px;
+
+      background: var(—green);
+
+      color: #090909;
 
       font-size: 12px;
 
-      font-weight: bold;
+      font-weight: 900;
+
+      letter-spacing: .7px;
+
+      transition: .2s;
+
+    }
+
+    .btn:hover { background: #ddff70; transform: translateY(-2px); }
+
+    .btn-outline { background: transparent; color: var(—green); }
+
+    .btn-outline:hover { color: #090909; }
+
+    .hero {
+
+      min-height: 570px;
+
+      display: flex;
+
+      align-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        radial-gradient(ellipse at 78% 40%, #343b1c 0, transparent 35%),
+
+        radial-gradient(ellipse at 20% 10%, #242424 0, transparent 45%),
+
+        #090909;
+
+      border-bottom: 1px solid var(—line);
+
+    }
+
+    .hero:after {
+
+      content: «K»;
+
+      position: absolute;
+
+      right: 5%;
+
+      top: 45%;
+
+      transform: translateY(-50%) rotate(-8deg);
+
+      font-size: clamp(250px, 43vw, 590px);
+
+      line-height: 1;
+
+      font-weight: 1000;
+
+      color: rgba(200,255,0,.055);
+
+      pointer-events: none;
+
+    }
+
+    .hero-content { position: relative; z-index: 1; padding: 90px 0; max-width: 760px; }
+
+    .eyebrow {
+
+      color: var(—green);
+
+      font-size: 11px;
+
+      font-weight: 900;
 
       letter-spacing: 4px;
+
+      text-transform: uppercase;
 
     }
 
     h1 {
 
-      margin: 20px 0;
+      margin: 22px 0;
 
-      font-size: clamp(38px, 8vw, 76px);
+      font-size: clamp(46px, 8.5vw, 100px);
 
-      line-height: 1.02;
+      line-height: .94;
+
+      letter-spacing: -4px;
+
+      font-weight: 1000;
+
+    }
+
+    h1 span { color: var(—green); display: block; }
+
+    .hero p { max-width: 480px; color: #aaa; line-height: 1.8; font-size: 15px; }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+    .hero-note { margin-top: 32px; color: #777; font-size: 11px; letter-spacing: 1px; }
+
+    .ticker {
+
+      overflow: hidden;
+
+      white-space: nowrap;
+
+      border-bottom: 1px solid var(—line);
+
+      padding: 15px 0;
+
+      color: var(—green);
+
+      font-size: 11px;
 
       font-weight: 900;
 
-    }
-
-    h1 span {
-
-      color: #c8ff00;
+      letter-spacing: 2px;
 
     }
 
-    .hero p {
+    .ticker span { margin: 0 22px; }
 
-      color: #a0a0a0;
+    section { scroll-margin-top: 90px; }
 
-      line-height: 1.7;
+    .section { padding: 75px 0; }
 
-      max-width: 520px;
-
-      margin: 0 auto 28px;
-
-    }
-
-    .btn {
-
-      display: inline-block;
-
-      padding: 16px 26px;
-
-      border: 0;
-
-      border-radius: 5px;
-
-      background-color: #c8ff00; !important;
-
-      color: #080808; !important;
-
-      font-size: 13px;
-
-      font-weight: 900;
-
-      text-decoration: none;
-
-      cursor: pointer;
-
-      transition: transform .2s, background-color .2s;
-
-    }
-
-    .btn:hover {
-
-      background-color: #dcff66;
-
-      transform: translateY(-2px);
-
-    }
-
-    .section {
-
-      padding: 55px 6%;
-
-    }
-
-    .section-title {
-
-      margin: 0 0 10px;
-
-      font-size: 30px;
-
-      font-weight: 900;
-
-    }
-
-    .section-subtitle {
-
-      color: #a0a0a0;
-
-      margin: 0 0 28px;
-
-    }
-
-    .categories {
+    .section-head {
 
       display: flex;
 
-      flex-wrap: wrap;
+      align-items: end;
 
-      gap: 10px;
+      justify-content: space-between;
 
-      margin-bottom: 30px;
+      gap: 20px;
+
+      margin-bottom: 28px;
+      }
+
+    .section-title {
+
+      margin: 8px 0 0;
+
+      font-size: clamp(28px, 4vw, 43px);
+
+      letter-spacing: -1.5px;
+
+      font-weight: 1000;
 
     }
 
-    .category {
+    .section-subtitle { color: var(—muted); line-height: 1.7; font-size: 14px; }
 
-      padding: 10px 16px;
+    .category-grid {
 
-      border: 1px solid #393939;
+      display: grid;
 
-      border-radius: 4px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+
+      gap: 12px;
+
+    }
+
+    .category-card {
+
+      min-height: 150px;
+
+      padding: 22px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      background: linear-gradient(140deg, #202020, #111);
+
+      border: 1px solid var(—line);
+
+      transition: .2s;
+
+      cursor: pointer;
+
+    }
+
+    .category-card:hover { border-color: var(—green); transform: translateY(-3px); }
+
+    .category-icon { font-size: 30px; }
+
+    .category-card strong { font-size: 15px; }
+
+    .category-card small { color: #888; margin-top: 6px; }
+
+    .catalog { background: #0d0d0d; border-top: 1px solid var(—line); border-bottom: 1px solid var(—line); }
+
+    .toolbar { display: flex; gap: 12px; margin-bottom: 18px; }
+
+    .search {
+
+      flex: 1;
+
+      min-width: 0;
+
+      padding: 14px 16px;
 
       background: #151515;
 
-      color: #f5f5f5;
+      color: white;
 
-      font-size: 13px;
+      border: 1px solid #333;
+
+      border-radius: 3px;
+
+      outline: none;
+
+    }
+
+    .search:focus { border-color: var(—green); }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+
+    .filter {
+
+      padding: 10px 14px;
+
+      background: #151515;
+
+      color: #bbb;
+
+      border: 1px solid #333;
+
+      border-radius: 3px;
+
+      font-size: 11px;
+
+      font-weight: 800;
 
     }
 
-    .category.active {
-
-      background: #c8ff00;
-
-      border-color: #c8ff00;
-
-      color: #080808;
-
-      font-weight: bold;
-
-    }
+    .filter.active, .filter:hover { background: var(—green); color: #090909; border-color: var(—green); }
 
     .products {
 
@@ -246,19 +379,23 @@
 
     .product {
 
+      min-width: 0;
+
       overflow: hidden;
 
-      border: 1px solid #292929;
+      background: var(—panel);
 
-      border-radius: 8px;
+      border: 1px solid var(—line);
 
-      background: #151515;
+      transition: transform .2s, border-color .2s;
 
     }
 
-    .product-image {
+    .product:hover { transform: translateY(-4px); border-color: #606b2c; }
 
-      min-height: 175px;
+    .product-visual {
+
+      height: 245px;
 
       display: flex;
 
@@ -266,152 +403,243 @@
 
       justify-content: center;
 
-      background: linear-gradient(145deg, #222, #101010);
+      position: relative;
 
-      font-size: 65px;
+      overflow: hidden;
 
-    }
+      background:
 
-    .product-info {
+        radial-gradient(ellipse at 50% 75%, #303526, transparent 55%),
 
-      padding: 20px;
-
-    }
-
-    .product-info h3 {
-
-      margin: 0 0 9px;
-
-      font-size: 17px;
+        linear-gradient(145deg, #252525, #111);
 
     }
 
-    .product-info p {
+    .product-visual .symbol {
 
-      min-height: 34px;
+      font-size: 82px;
 
-      margin: 0 0 18px;
+      filter: drop-shadow(0 15px 14px rgba(0,0,0,.4));
 
-      color: #a0a0a0;
-
-      font-size: 13px;
-
-      line-height: 1.5;
+      transition: transform .3s;
 
     }
 
-    .order {
+    .product:hover .symbol { transform: scale(1.08) rotate(-4deg); }
 
-      display: block;
+    .product-tag {
 
-      width: 100%;
+      position: absolute;
 
-      padding: 13px 10px;
+      top: 13px;
 
-      border: 0;
+      left: 13px;
 
-      border-radius: 4px;
+      padding: 7px 9px;
 
-      background-color: #c8ff00;
+      background: var(—green);
 
-      color: #080808;
+      color: #090909;
+
+      font-size: 9px;
 
       font-weight: 900;
 
-      text-align: center;
-
-      text-decoration: none;
+      letter-spacing: 1px;
 
     }
 
-    .order:hover {
+    .product-info { padding: 19px; }
 
-      background-color: #dcff66;
+    .product-category { color: var(—green); font-size: 10px; font-weight: 900; letter-spacing: 1.5px; }
 
-    }
+    .product-info h3 { margin: 10px 0; font-size: 18px; }
 
-    .about {
+    .product-info p { color: #999; font-size: 12px; line-height: 1.6; min-height: 38px; }
 
-      border-top: 1px solid #292929;
+    .product-bottom { margin-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 
-      border-bottom: 1px solid #292929;
+    .price-note { color: #aaa; font-size: 11px; }
 
-      background: #101010;
+    .product-bottom .btn { padding: 11px 12px; font-size: 10px; }
 
-    }
+    .empty { display: none; padding: 40px 10px; color: #aaa; text-align: center; grid-column: 1/-1; }
 
-    .about p {
+    .brands { display: flex; flex-wrap: wrap; gap: 10px; }
 
-      max-width: 680px;
+    .brand {
 
-      color: #b0b0b0;
+      padding: 13px 17px;
 
-      line-height: 1.8;
+      border: 1px solid #333;
 
-    }
+      background: #121212;
 
-    footer {
-
-      padding: 28px 6%;
-
-      color: #888;
+      color: #ddd;
 
       font-size: 12px;
 
-      text-align: center;
+      font-weight: 900;
+
+      letter-spacing: 1px;
 
     }
 
-  @media (max-width: 700px) {
-    .products {
+    .brand:hover { border-color: var(—green); color: var(—green); }
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
 
-        gap: 12px;
+    .step { padding: 25px; border: 1px solid var(—line); background: #111; }
 
-      }
+    .step-number { color: var(—green); font-size: 12px; font-weight: 900; letter-spacing: 2px; }
 
-      .product-image {
+    .step h3 { font-size: 17px; margin: 18px 0 10px; }
 
-        min-height: 130px;
+    .step p { color: #999; font-size: 13px; line-height: 1.8; margin: 0; }
 
-        font-size: 48px;
+    .cta {
 
-      }
+      padding: 50px;
 
-      .product-info {
+      background: var(—green);
 
-        padding: 14px;
+      color: #090909;
 
-      }
+      display: flex;
 
-      .product-info h3 {
+      align-items: center;
 
-        font-size: 15px;
+      justify-content: space-between;
 
-      }
-
-      .section {
-
-        padding: 40px 5%;
-
-      }
-
-      .hero {
-
-        padding: 65px 5%;
-
-      }
+      gap: 24px;
 
     }
 
-   @media (max-width: 390px) {
+    .cta h2 { margin: 0 0 10px; font-size: clamp(27px,4vw,44px); letter-spacing: -1px; }
 
-      .products {
+    .cta p { margin: 0; max-width: 500px; line-height: 1.7; font-size: 13px; }
 
-        grid-template-columns: 1fr;
+    .cta .btn { background: #090909; border-color: #090909; color: var(—green); white-space: nowrap; }
 
-      }
+    .cta .btn:hover { background: #262626; }
+
+    footer { border-top: 1px solid var(—line); padding: 28px 0; color: #777; font-size: 11px; }
+
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    dialog {
+
+      width: min(480px, calc(100% - 28px));
+
+      padding: 0;
+
+      border: 1px solid #444;
+
+      background: #111;
+
+      color: var(—white);
+
+    }
+
+    dialog::backdrop { background: rgba(0,0,0,.8); backdrop-filter: blur(4px); }
+
+    .modal-inner { padding: 25px; }
+
+    .modal-head { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+
+    .modal-head h2 { margin: 0 0 8px; font-size: 24px; }
+
+    .close { background: transparent; color: white; border: 0; font-size: 25px; }
+
+    .field { display: block; margin: 16px 0; }
+
+    .field span { display: block; margin-bottom: 7px; color: #aaa; font-size: 12px; }
+
+    .field input, .field select, .field textarea {
+
+      width: 100%;
+
+      padding: 12px;
+
+      background: #1a1a1a;
+
+      border: 1px solid #393939;
+
+      color: white;
+
+      border-radius: 3px;
+
+    }
+
+    .field textarea { min-height: 85px; resize: vertical; }
+
+    .modal-help { color: #888; font-size: 11px; line-height: 1.6; }
+
+    .modal-result { display: none; margin-top: 16px; }
+
+    .modal-result textarea { width: 100%; min-height: 130px; padding: 12px; color: white; background: #1b1b1b; border: 1px solid #444; }
+
+    max-width: 800px {
+
+      .nav-links { gap: 12px; }
+
+      .nav-links a:not(.btn) { display: none; }
+
+      .category-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+
+      .products { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+
+      .product-visual { height: 190px; }
+
+      .product-visual .symbol { font-size: 65px; }
+
+      .steps { grid-template-columns: 1fr; }
+
+      .cta { padding: 30px; align-items: flex-start; flex-direction: column; }
+
+    }
+
+    max-width: 480px {
+
+      .wrap { width: 92%; }
+
+      .nav { min-height: 65px; }
+
+      .logo { font-size: 17px; }
+
+      .nav .btn { padding: 11px 12px; font-size: 10px; }
+
+      .hero { min-height: 510px; }
+
+      .hero-content { padding: 70px 0; }
+
+      h1 { letter-spacing: -2px; }
+
+      .section { padding: 50px 0; }
+
+      .section-head { align-items: flex-start; flex-direction: column; }
+
+      .toolbar { flex-direction: column; }
+
+      .products { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
+
+      .product-visual { height: 145px; }
+
+      .product-visual .symbol { font-size: 50px; }
+
+      .product-info { padding: 12px; }
+
+      .product-info h3 { font-size: 14px; }
+
+      .product-info p { font-size: 11px; min-height: 48px; }
+
+      .product-bottom { align-items: stretch; flex-direction: column; }
+
+      .product-bottom .btn { width: 100%; }
+
+      .category-card { min-height: 125px; padding: 15px; }
+
+      .cta { padding: 24px; }
 
     }
 
@@ -423,110 +651,388 @@
 
   <header>
 
-    <div class=«logo»>KRAVMA <span>WEAR</span></div>
+    <div class=«wrap nav»>
 
-    <a class=«btn» href=«#catalog»>КАТАЛОГ</a>
+      <a class=«logo» href=«#top» aria-label=«KRAVMA Wear Shop»>KRAVMA <span>WEAR</span></a>
 
-  </header>
+      <nav class=«nav-links» aria-label=«Основная навигация»>
 
-  <main>
+        <a href=«#categories»>Категории</a>
+
+        <a href=«#catalog»>Каталог</a>
+
+        <a href=«#how»>Как заказать</a>
+
+        <a class=«btn» href=«#catalog»>НАЙТИ СВОЁ</a>
+
+      </nav>
+
+    </div></header>
+
+  <main id=«top»>
 
     <section class=«hero»>
 
-      <div class=«tag»>YOUR STYLE. YOUR RULES.</div>
+      <div class=«wrap hero-content»>
 
-      <h1>KRAVMA
-<span>WEAR SHOP</span></h1>
+        <div class=«eyebrow»>Your style. Your rules.</div>
 
-      <p>Кроссовки, одежда и аксессуары для твоего стиля. Выбирай свой образ вместе с KRAVMA.</p>
+        <h1>ВЫБИРАЙ
+СВОЙ <span>УРОВЕНЬ.</span></h1>
 
-      <a href=«#catalog»
-        style=«background:#c8ff00;color:#080808;padding:
-          16px 26px;border-radius:5px;font-
-        weight:900;text-decoration:none;display:inline-
-        block;»>СМОТРЕТЬ КАТАЛОГ</a>
+        <p>Кроссовки, одежда и аксессуары для твоего стиля. Ищи нужную модель, оставляй заявку и уточняй доступность перед покупкой.</p>
 
-    </section>
+        <div class=«hero-actions»>
 
-    <section class=«section» id=«catalog»>
+          <a class=«btn» href=«#catalog»>СМОТРЕТЬ КАТАЛОГ ↗</a>
 
-      <h2 class=«section-title»>КАТАЛОГ</h2>
+          <a class=«btn btn-outline» href=«#how»>КАК ЭТО РАБОТАЕТ</a>
 
-      <p class=«section-subtitle»>Выбирай то, что подходит именно тебе.</p>
+        </div>
 
-      <div class=«categories»>
-
-        <span class=«category active»>ВСЁ</span>
-
-        <span class=«category»>КРОССОВКИ</span>
-
-        <span class=«category»>ОДЕЖДА</span>
-
-        <span class=«category»>АКСЕССУАРЫ</span>
-
-      </div>
-
-      <div class=«products»>
-
-        <article class=«product»>
-
-          <div class=«product-image»>👟</div>
-
-          <div class=«product-info»>
-
-            <h3>Кроссовки</h3>
-
-            <p>Стильная пара для твоего образа.</p>
-
-            <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ</a>
-
-          </div>
-
-        </article>
-
-        <article class=«product»>
-
-          <div class=«product-image»>👕</div>
-
-          <div class=«product-info»>
-
-            <h3>Одежда</h3>
-
-            <p>Базовые вещи и уличный стиль.</p>
-
-            <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ</a>
-
-          </div>
-
-        </article>
-
-        <article class=«product»>
-
-          <div class=«product-image»>🧢</div>
-
-          <div class=«product-info»>
-
-            <h3>Аксессуары</h3>
-
-            <p>Детали, которые завершают образ.</p>
-
-            <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ</a>
-
-          </div>
-
-        </article>
+        <div class=«hero-note»>STREETWEAR · SNEAKERS · ACCESSORIES</div>
 
       </div>
 
     </section>
 
-    <section class=«section about»>
+    <div class=«ticker» aria-label=«Ассортимент»>
 
-      <h2 class=«section-title»>ПОЧЕМУ KRAVMA?</h2>
+      <span>KRAVMA WEAR SHOP</span> ✳ <span>FIND YOUR STYLE</span> ✳
 
-      <p>Собирай свой стиль, выбирай любимые вещи и оформляй заказ через наш Telegram-бот. Актуальные модели и цены уточняй перед покупкой.</p>
+      <span>SNEAKERS</span> ✳ <span>STREETWEAR</span> ✳ <span>ACCESSORIES</span> ✳
 
-      <a class=«btn» href=«https://t.me/KravPoizonShopBot»>НАПИСАТЬ НАМ</a>
+      <span>KRAVMA WEAR SHOP</span>
+
+    </div>
+
+    <section class=«section» id=«categories»>
+
+      <div class=«wrap»>
+
+        <div class=«section-head»>
+
+          <div>
+
+            <div class=«eyebrow»>Explore the collection</div>
+
+            <h2 class=«section-title»>ТВОЙ ВЫБОР.</h2>
+
+          </div>
+
+          <p class=«section-subtitle»>Разные категории — один стиль.</p>
+
+        </div>
+
+        <div class=«category-grid»>
+
+          <a class=«category-card» href=«#catalog» data-jump=«Кроссовки»>
+
+            <span class=«category-icon»>👟</span>
+
+            <div><strong>КРОССОВКИ</strong><
+small>На каждый день и не только</small></div>
+
+          </a>
+
+          <a class=«category-card» href=«#catalog» data-jump=«Одежда»>
+
+            <span class=«category-icon»>👕</span>
+
+            <div><strong>ОДЕЖДА</strong><b
+mall>Собери свой образ</small></div>
+
+          </a>
+
+          <a class=«category-card» href=«#catalog» data-jump=«Аксессуары»>
+
+            <span class=«category-icon»>🧢</span>
+
+            <div><strong>АКСЕССУАРЫ</strong><br
+all>Детали решают</small></div>
+
+          </a>
+
+          <a class=«category-card» href=«#catalog» data-jump=«Другое»>
+
+            <span class=«category-icon»>✳</span>
+
+            <div><strong>ДРУГОЕ</strong><br
+all>Найди то, что искал</small></div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class=«section catalog» id=«catalog»>
+
+      <div class=«wrap»>
+
+        <div class=«section-head»>
+
+          <div>
+
+            <div class=«eyebrow»>The selection</div>
+
+            <h2 class=«section-title»>КАТАЛОГ<span style=«color:var(—green)»>.</span></h2>
+
+            <p class=«section-subtitle»>Это примеры категорий. Наличие и итоговую цену уточняем по запросу.</p>
+
+          </div>
+
+        </div>
+
+        <div class=«toolbar»>
+
+          <input class=«search» id=«search» type=«search» placeholder=«Поиск: кроссовки, худи, сумка...» aria-label=«Поиск по каталогу»>
+
+        </div>
+
+        <div class=«filters» aria-label=«Фильтр товаров»>
+
+          <button class=«filter active» type=«button» data-filter=«Все»>ВСЁ</button>
+
+          <button class=«filter» type=«button» data-filter=«Кроссовки»>КРОССОВКИ</button>
+
+          <button class=«filter» type=«button» data-filter=«Одежда»>ОДЕЖДА</button>
+
+          <button class=«filter» type=«button» data-filter=«Аксессуары»>АКСЕССУАРЫ</button>
+
+          <button class=«filter» type=«button» data-filter=«Другое»>ДРУГОЕ</button>
+
+        </div>
+
+        <div class=«products» id=«products»>
+
+          <article class=«product» data-category=«Кроссовки» data-search=«кроссовки sneakers обувь»>
+
+            <div class=«product-visual»><span class=«product-tag»>SNEAKERS</span><span class=«symbol»>👟</span></div>
+
+            <div class=«product-info»>
+
+              <div class=«product-category»>ОБУВЬ</div>
+
+              <h3>Кроссовки</h3>
+
+              <p>Повседневные пары и выразительные силуэты.</p>
+
+              <div class=«product-bottom»><span class=«price-note»>Цена по запросу</span><button class=«btn ask» type=«button» data-item=«Кроссовки»>УЗНАТЬ ↗</button></div>
+
+            </div>
+
+          </article><article class=«product» data-category=«Одежда» data-search=«худи hoodie свитшот одежда»>
+
+            <div class=«product-visual»><span class=«product-tag»>STREETWEAR</span><span class=«symbol»>🧥</span></div>
+
+            <div class=«product-info»>
+
+              <div class=«product-category»>ОДЕЖДА</div>
+
+              <h3>Худи и свитшоты</h3>
+
+              <p>Комфортные вещи для многослойных образов.</p>
+
+              <div class=«product-bottom»><span class=«price-note»>Цена по запросу</span><button class=«btn ask» type=«button» data-item=«Худи и свитшоты»>УЗНАТЬ ↗</button></div>
+
+            </div>
+
+          </article>
+
+          <article class=«product» data-category=«Одежда» data-search=«футболка t-shirt футболки»>
+
+            <div class=«product-visual»><span class=«product-tag»>ESSENTIALS</span><span class=«symbol»>👕</span></div>
+
+            <div class=«product-info»>
+
+              <div class=«product-category»>ОДЕЖДА</div>
+
+              <h3>Футболки</h3>
+
+              <p>База, которую легко сочетать с разными стилями.</p>
+
+              <div class=«product-bottom»><span class=«price-note»>Цена по запросу</span><button class=«btn ask» type=«button» data-item=«Футболка»>УЗНАТЬ ↗</button></div>
+
+            </div>
+
+          </article>
+
+          <article class=«product» data-category=«Аксессуары» data-search=«сумка bag bags»>
+
+            <div class=«product-visual»><span class=«product-tag»>ACCESSORIES</span><span class=«symbol»>👜</span></div>
+
+            <div class=«product-info»>
+
+              <div class=«product-category»>АКСЕССУАРЫ</div>
+
+              <h3>Сумки</h3>
+
+              <p>Практичные формы и акцентные детали.</p>
+
+              <div class=«product-bottom»><span class=«price-note»>Цена по запросу</span><button class=«btn ask» type=«button» data-item=«Сумка»>УЗНАТЬ ↗</button></div>
+
+            </div>
+
+          </article>
+
+          <article class=«product» data-category=«Аксессуары» data-search=«кепка шапка cap hat»>
+
+            <div class=«product-visual»><span class=«product-tag»>DAILY</span><span class=«symbol»>🧢</span></div>
+
+            <div class=«product-info»>
+
+              <div class=«product-category»>АКСЕССУАРЫ</div>
+
+              <h3>Головные уборы</h3>
+
+              <p>Финальный штрих для повседневного образа.</p>
+
+              <div class=«product-bottom»><span class=«price-note»>Цена по запросу</span><button class=«btn ask» type=«button» data-item=«Головной убор»>УЗНАТЬ ↗</button></div>
+
+            </div>
+
+          </article>
+
+          <article class=«product» data-category=«Другое» data-search=«парфюм косметика уход lifestyle»>
+
+            <div class=«product-visual»><span class=«product-tag»>LIFESTYLE</span><span class=«symbol»>✳</span></div>
+
+            <div class=«product-info»>
+
+              <div class=«product-category»>LIFESTYLE</div>
+
+              <h3>Другие товары</h3>
+
+              <p>Напиши, какую модель или вещь ты ищешь.</p>
+
+              <div class=«product-bottom»><span class=«price-note»>По запросу</span><button class=«btn ask» type=«button» data-item=«Другой товар»>УЗНАТЬ ↗</button></div>
+
+            </div>
+
+          </article>
+
+          <div class=«empty» id=«empty»>Ничего не найдено. Попробуй другой запрос.</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class=«section»>
+
+      <div class=«wrap»>
+
+        <div class=«section-head»>
+
+          <div>
+
+            <div class=«eyebrow»>Brands & more</div>
+
+            <h2 class=«section-title»>ИЩИ СВОЙ БРЕНД.</h2>
+
+          </div>
+
+        </div>
+
+        <div class=«brands»>
+
+          <span class=«brand»>NIKE</span>
+
+          <span class=«brand»>JORDAN</span>
+
+          <span class=«brand»>ADIDAS</span>
+
+          <span class=«brand»>NEW BALANCE</span>
+
+          <span class=«brand»>ASICS</span>
+
+          <span class=«brand»>ZARA</span>
+
+          <span class=«brand»>И ДРУГИЕ</span>
+
+        </div>
+
+        <p class=«section-subtitle»>Список брендов — ориентир для поиска, а не подтверждение наличия конкретных товаров.</p>
+
+      </div>
+
+    </section><section class=«section» id=«how»>
+
+      <div class=«wrap»>
+
+        <div class=«section-head»>
+
+          <div>
+
+            <div class=«eyebrow»>Simple process</div>
+
+            <h2 class=«section-title»>КАК ЗАКАЗАТЬ.</h2>
+
+          </div>
+
+        </div>
+
+        <div class=«steps»>
+
+          <article class=«step»>
+
+            <div class=«step-number»>01 / ВЫБЕРИ</div>
+
+            <h3>Найди нужную вещь</h3>
+
+            <p>Выбери категорию и укажи модель, цвет и размер, если они важны.</p>
+
+          </article>
+
+          <article class=«step»>
+
+            <div class=«step-number»>02 / УТОЧНИ</div>
+
+            <h3>Проверь доступность</h3>
+
+            <p>Перед покупкой нужно подтвердить наличие, итоговую стоимость и срок доставки.</p>
+
+          </article>
+
+          <article class=«step»>
+
+            <div class=«step-number»>03 / ПОДТВЕРДИ</div>
+
+            <h3>Согласуй заказ</h3>
+
+            <p>Решение о покупке принимаешь после согласования всех условий.</p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class=«section»>
+
+      <div class=«wrap»>
+
+        <div class=«cta»>
+
+          <div>
+
+            <h2>НЕ НАШЁЛ НУЖНОЕ?</h2>
+
+            <p>Оставь заявку с названием модели или ссылкой на товар. Мы подготовим запрос для уточнения доступности и цены.</p>
+
+          </div>
+
+          <button class=«btn» id=«otherRequest» type=«button»>ОСТАВИТЬ ЗАЯВКУ ↗</button>
+
+        </div>
+
+      </div>
 
     </section>
 
@@ -534,9 +1040,255 @@
 
   <footer>
 
-    © 2026 KRAVMA WEAR SHOP. ALL RIGHTS RESERVED.
+    <div class=«wrap footer-inner»>
+
+      <a class=«logo» href=«#top»>KRAVMA <span>WEAR</span></a>
+
+      <span>© 2026 KRAVMA WEAR SHOP</span>
+
+      <span>Наличие и цены подтверждаются перед покупкой.</span>
+
+    </div>
 
   </footer>
+
+  <dialog id=«requestDialog»>
+
+    <div class=«modal-inner»>
+
+      <div class=«modal-head»>
+
+        <div>
+
+          <div class=«eyebrow»>KRAVMA WEAR SHOP</div>
+
+          <h2>ЗАЯВКА НА ТОВАР</h2>
+
+        </div>
+
+        <button class=«close» id=«closeDialog» type=«button» aria-label=«Закрыть»>×</button>
+
+      </div>
+
+      <p class=«modal-help»>Заполни форму — мы подготовим текст заявки. Сообщение не отправляется автоматически.</p>
+
+      <form id=«requestForm»>
+
+        <label class=«field»>
+
+          <span>Что ищешь?</span>
+
+          <input id=«item» name=«item» required placeholder=«Модель или название товара»>
+
+        </label>
+
+        <label class=«field»>
+
+          <span>Размер или параметры (необязательно)</span>
+
+          <input id=«size» name=«size» placeholder=«Например, размер или цвет»>
+
+        </label>
+
+        <label class=«field»>
+
+          <span>Ссылка на товар (необязательно)</span>
+
+          <input id=«link» name=«link» type=«url» placeholder=«https://...»>
+
+        </label>
+
+        <label class=«field»>
+
+          <span>Комментарий (необязательно)</span>
+
+          <textarea id=«comment» name=«comment» placeholder=«Дополнительные пожелания»></textarea>
+
+        </label>
+
+        <button class=«btn» type=«submit»>ПОДГОТОВИТЬ ЗАЯВКУ</button>
+
+      </form>
+
+      <div class=«modal-result» id=«result»>
+
+        <p>Текст заявки готов. Скопируй его и отправь удобным способом.</p>
+
+        <textarea id=«requestText» readonly></textarea>
+
+        <button class=«btn» id=«copyRequest» type=«button»>СКОПИРОВАТЬ ТЕКСТ</button>
+
+        <p class=«modal-help» id=«copyStatus» aria-live=«polite»></p>
+
+      </div>
+
+    </div>
+
+  </dialog>
+
+  <script>
+
+    const searchInput = document.getElementById(‘search’);
+
+    const cards = [...document.querySelectorAll(‘.product’)];
+
+    const filters = [...document.querySelectorAll(‘[data-filter]’)];
+
+    const empty = document.getElementById(‘empty’);
+
+    let activeCategory = ‘Все’;
+
+    function updateCatalog() {
+
+      const query = searchInput.value.trim().toLowerCase();
+
+      let visible = 0;
+
+      cards.forEach(card => {
+
+        const categoryMatch = activeCategory === ‘Все’ || card.dataset.category === activeCategory;
+
+        const searchMatch = (card.dataset.search + ‘ ‘ + card.innerText).toLowerCase().includes(query);const show = categoryMatch && searchMatch;
+
+        card.style.display = show ? ‘’ : ‘none’;
+
+        if (show) visible++;
+
+      });
+
+      empty.style.display = visible ? ‘none’ : ‘block’;
+
+    }
+
+    filters.forEach(button => {
+
+      button.addEventListener(‘click’, () => {
+
+        activeCategory = button.dataset.filter;
+
+        filters.forEach(filter => filter.classList.toggle(‘active’, filter === button));
+
+        updateCatalog();
+
+      });
+
+    });
+
+    searchInput.addEventListener(‘input’, updateCatalog);
+
+    document.querySelectorAll(‘[data-jump]’).forEach(link => {
+
+      link.addEventListener(‘click’, () => {
+
+        activeCategory = link.dataset.jump;
+
+        filters.forEach(filter => filter.classList.toggle(‘active’, filter.dataset.filter === activeCategory));
+
+        updateCatalog();
+
+      });
+
+    });
+
+    const dialog = document.getElementById(‘requestDialog’);
+
+    const itemInput = document.getElementById(‘item’);
+
+    function openRequest(itemName = ‘’) {
+
+      document.getElementById(‘requestForm’).reset();
+
+      document.getElementById(‘result’).style.display = ‘none’;
+
+      document.getElementById(‘copyStatus’).textContent = ‘’;
+
+      itemInput.value = itemName;
+
+      if (typeof dialog.showModal === ‘function’) dialog.showModal();
+
+      else alert(‘Форма доступна в современном браузере. Обнови браузер и попробуй ещё раз.’);
+
+    }
+
+    document.querySelectorAll(‘.ask’).forEach(button => {
+
+      button.addEventListener(‘click’, () => openRequest(button.dataset.item));
+
+    });
+
+    document.getElementById(‘otherRequest’).addEventListener(‘click’, () => openRequest(‘’));
+
+    document.getElementById(‘closeDialog’).addEventListener(‘click’, () => dialog.close());
+
+    dialog.addEventListener(‘click’, event => {
+
+      if (event.target === dialog) dialog.close();
+
+    });
+
+    document.getElementById(‘requestForm’).addEventListener(‘submit’, event => {
+
+      event.preventDefault();
+
+      const values = {
+
+        item: itemInput.value.trim(),
+
+        size: document.getElementById(‘size’).value.trim(),
+
+        link: document.getElementById(‘link’).value.trim(),
+
+        comment: document.getElementById(‘comment’).value.trim()
+
+      };
+
+      const lines = [
+
+        ‘Заявка — KRAVMA WEAR SHOP’,
+
+        ‘Товар: ‘ + values.item,
+
+        values.size ? ‘Размер/параметры: ‘ + values.size : ‘’,
+
+        values.link ? ‘Ссылка: ‘ + values.link : ‘’,
+
+        values.comment ? ‘Комментарий: ‘ + values.comment : ‘’,
+
+        ‘Прошу уточнить доступность, итоговую цену и срок доставки.’
+
+      ].filter(Boolean);
+
+      document.getElementById(‘requestText’).value = lines.join(‘\n’);
+
+      document.getElementById(‘result’).style.display = ‘block’;
+
+    });
+
+    document.getElementById(‘copyRequest’).addEventListener(‘click’, async () => {
+
+      const text = document.getElementById(‘requestText’).value;
+
+      const status = document.getElementById(‘copyStatus’);
+
+      try {
+
+        await navigator.clipboard.writeText(text);
+
+        status.textContent = ‘Заявка скопирована. Теперь вставь её в сообщение.’;
+
+      } catch (error) {
+
+        document.getElementById(‘requestText’).focus();
+
+        document.getElementById(‘requestText’).select();
+
+        status.textContent = ‘Автокопирование недоступно. Выдели текст выше и нажми ⌘ + C.’;
+
+      }
+
+    });
+
+  </script>
 
 </body>
 
