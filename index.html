@@ -1,759 +1,205 @@
 <!DOCTYPE html>
-
 <html lang=«ru»>
-
 <head>
-
 <meta charset=«UTF-8»>
-
-<meta name=«viewport» content=«width=device-width, initial-scale=1»>
-
-<meta name=«theme-color» content=«#0a0a0a»>
-
-<meta name=«description» content=«KRAVMA POIZON SHOP — кроссовки, одежда и аксессуары под заказ.»>
-
-<title>KRAVMA® — POIZON SHOP</title>
-
+<meta name=«viewport» content=«width=device-width, initial-scale=1.0»>
+<title>KRAVMA® | POIZON SHOP</title>
 <style>
-
 :root {
-
   —bg: #0a0a0a;
-
-  —panel: #151515;
-
-  —line: #292929;
-
+  —card: #141414;
   —green: #c8ff00;
-
-  —muted: #a0a0a0;
-
+  —white: #f5f5f5;
+  —muted: #999;
 }
-
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
 body {
-
   margin: 0;
-
   background: var(—bg);
-
-  color: #fff;
-
+  color: var(—white);
   font-family: Arial, Helvetica, sans-serif;
-
 }
-
-a { text-decoration: none; }
-
 header {
-
-  padding: 20px 6%;
-
+  padding: 22px 6%;
+  border-bottom: 1px solid #292929;
   display: flex;
-
-  align-items: center;
-
   justify-content: space-between;
-
-  border-bottom: 1px solid var(—line);
-
+  align-items: center;
 }
-
-.logo {
-
-  font-size: 22px;
-
-  font-weight: 900;
-
-  letter-spacing: 1px;
-
-}
-
+.logo { font-weight: 900; font-size: 22px; letter-spacing: 2px; }
 .logo span { color: var(—green); }
-
-.header-tag {
-
-  font-size: 10px;
-
-  letter-spacing: 2px;
-
-  color: var(—muted);
-
-}
-
-.hero {
-
-  padding: 72px 6% 58px;
-
-  background: radial-gradient(ellipse at 80% 20%, #292e12 0%, #111 36%, #0a0a0a 72%);
-
-}
-
-.eyebrow {
-
-  color: var(—green);
-
-  font-size: 11px;
-
-  letter-spacing: 4px;
-
-  font-weight: bold;
-
-}
-
-.hero h1 {
-
-  font-size: clamp(43px, 10vw, 94px);
-
-  line-height: .91;
-
-  letter-spacing: -4px;
-
-  margin: 22px 0;
-
-  font-weight: 900;
-
-}
-
-.hero h1 span { color: var(—green); }
-
-.hero p {
-
-  color: #b8b8b8;
-
-  max-width: 440px;
-
-  font-size: 15px;
-
-  line-height: 1.7;
-
-  margin-bottom: 28px;
-
-}
-
+.tag { color: var(—muted); font-size: 11px; letter-spacing: 2px; }
+.hero { padding: 75px 6% 55px; }
+.eyebrow { color: var(—green); letter-spacing: 4px; font-size: 11px; }
+h1 { font-size: clamp(42px, 9vw, 90px); line-height: .95; margin: 20px 0; letter-spacing: -4px; }
+h1 span { color: var(—green); }
+.hero p { color: var(—muted); line-height: 1.7; max-width: 440px; }
 .btn {
-
   display: inline-block;
-
   background: var(—green);
-
-  color: #080808;
-
-  padding: 15px 21px;
-
-  border-radius: 4px;
-
+  color: #090909;
+  padding: 15px 22px;
+  margin-top: 18px;
+  text-decoration: none;
   font-size: 12px;
-
   font-weight: 900;
-
   letter-spacing: 1px;
-
-  transition: transform .2s, background .2s;
-
 }
-
-.btn:hover {
-
-  transform: translateY(-2px);
-
-  background: #dcff70;
-
-}
-
-.benefits {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 12px 25px;
-
-  padding: 19px 6%;
-
-  border-top: 1px solid var(—line);
-
-  border-bottom: 1px solid var(—line);
-
-  color: #bdbdbd;
-
-  font-size: 11px;
-
-  letter-spacing: 1px;
-
-}
-
-.benefits span::before {
-
-  content: «✳ «;
-
-  color: var(—green);
-
-}
-
-.catalog {
-
-  max-width: 1180px;
-
-  margin: auto;
-
-  padding: 48px 6%;
-
-}
-
-.section-head {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: end;
-
-  flex-wrap: wrap;
-
-  gap: 12px;
-
-}
-
-.kicker {
-
-  color: var(—green);
-
-  font-size: 10px;
-
-  letter-spacing: 3px;
-
-  font-weight: bold;
-
-}
-
-h2 {
-
-  margin: 10px 0;
-
-  font-size: clamp(28px, 5vw, 43px);
-
-  letter-spacing: -1px;
-
-}
-
-.note {
-
-  color: var(—muted);
-
-  font-size: 13px;
-
-  line-height: 1.7;
-
-}
-
-.filters {
-
-  display: flex;
-
-  gap: 8px;
-
-  flex-wrap: wrap;
-
-  margin: 25px 0;
-
-}
-
-.filters button {
-
-  background: transparent;
-
-  color: #ccc;
-
-  border: 1px solid #393939;
-
-  border-radius: 3px;
-
-  padding: 11px 15px;
-
-  font-size: 11px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-}
-
-.filters button.active,
-
-.filters button:hover {
-
-  color: #080808;
-
-  background: var(—green);
-
-  border-color: var(—green);
-
-}
-
-.grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: 12px;
-
-}
-
-.card {
-
-  background: var(—panel);
-
-  border: 1px solid var(—line);
-
-  min-width: 0;
-
-  overflow: hidden;
-
-  transition: border-color .2s, transform .2s;
-
-}
-
-.card:hover {
-
-  border-color: #8ba800;
-
-  transform: translateY(-3px);
-
-}
-
-.product-visual {
-
-  height: 155px;
-
-  background: radial-gradient(ellipse at center, #303030 0%, #1a1a1a 58%, #131313 100%);
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-size: 65px;
-
-  position: relative;
-
-}
-
-.product-visual::after {
-
-  content: «KRAVMA®»;
-
-  position: absolute;
-
-  bottom: 10px;
-
-  right: 10px;
-
-  color: #555;
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
-
-  font-weight: bold;
-
-}
-
-.product-info { padding: 15px; }
-
-.product-type {
-
-  color: var(—green);
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
-
-  font-weight: bold;
-
-}
-
-.product-info h3 {
-
-  font-size: 16px;
-
-  margin: 9px 0;
-
-}
-
-.product-info p {
-
-  color: var(—muted);
-
-  font-size: 12px;
-
-  line-height: 1.5;
-
-  min-height: 36px;
-
-  margin: 0;
-
-}
-
-.price {
-
-  font-size: 19px;
-
-  font-weight: 900;
-
-  margin: 16px 0;
-
-}
-
-.order {
-
-  display: block;
-
-  text-align: center;
-
-  padding: 13px 8px;
-
-  background: var(—green);
-
-  color: #080808;
-
-  font-size: 11px;
-
-  font-weight: 900;
-
-  letter-spacing: 1px;
-
-  border-radius: 3px;
-
-}
-
-.order:hover { background: #dcff70; }
-
-.custom {
-
-  margin-top: 30px;
-
-  padding: 27px;
-
+section { padding: 30px 6% 60px; }
+.section-title { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+h2 { font-size: 25px; }
+.section-title span { color: var(—green); font-size: 11px; letter-spacing: 2px; }
+.categories { display: flex; gap: 9px; flex-wrap: wrap; margin: 20px 0 28px; }
+.category {
   border: 1px solid #363636;
-
-  background: linear-gradient(120deg, #1b1b1b, #111);
-
+  background: transparent;
+  color: var(—white);
+  padding: 11px 15px;
+  cursor: pointer;
 }
-
-.custom h2 { font-size: 25px; }
-
-.custom p {
-
-  max-width: 570px;
-
-  color: #aaa;
-
-  line-height: 1.7;
-
-  font-size: 13px;
-
+.category.active, .category:hover {
+  background: var(—green);
+  color: #000;
+  border-color: var(—green);
 }
-
-footer {
-
-  padding: 28px 6%;
-
-  border-top: 1px solid var(—line);
-
-  color: #777;
-
-  font-size: 11px;
-
-  line-height: 1.8;
-
-}
-
-.footer-inner {
-
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+.product { background: var(—card); border: 1px solid #242424; padding: 15px; min-width: 0; }
+.product-art {
+  background: #1d1d1d;
+  min-height: 135px;
   display: flex;
-
-  justify-content: space-between;
-
-  flex-wrap: wrap;
-
-  gap: 12px;
-
+  justify-content: center;
+  align-items: center;
+  font-size: 58px;
+  margin-bottom: 15px;
 }
-
-footer strong { color: #fff; }
-
-min-width: 760px {
-
-  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-
-  .product-visual { height: 230px; font-size: 88px; }
-
-  .product-info { padding: 19px; }
-
-  .hero { padding-top: 100px; padding-bottom: 85px; }
-
+.product small { color: var(—green); letter-spacing: 2px; font-size: 10px; }
+.product h3 { font-size: 15px; margin: 9px 0; }
+.product p { color: var(—muted); font-size: 12px; line-height: 1.5; min-height: 32px; }
+.price { font-weight: 900; font-size: 15px; margin: 14px 0; }
+.order {
+  display: block;
+  text-align: center;
+  padding: 13px 8px;
+  background: var(—green);
+  color: #000;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
-
-max-width: 380px {
-
-  .grid { grid-template-columns: 1fr; }
-
-  .hero h1 { letter-spacing: -2px; }
-
+.note { color: var(—muted); font-size: 12px; line-height: 1.7; }
+footer { padding: 30px 6%; border-top: 1px solid #292929; color: var(—muted); font-size: 11px; line-height: 1.8; }
+footer strong { color: var(—green); }
+min-width: 700px {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .product-art { min-height: 180px; }
 }
-
 </style>
-
 </head>
-
 <body>
-
 <header>
-
   <div class=«logo»>KRAVMA<span>®</span></div>
-
-  <div class=«header-tag»>POIZON / ONLINE SHOP</div>
-
+  <div class=«tag»>POIZON SHOP</div>
 </header>
 
 <main>
-
-  <section class=«hero»>
-
-    <div class=«eyebrow»>YOUR STYLE. YOUR RULES.</div>
-
+  <div class=«hero»>
+    <div class=«eyebrow»>YOUR STYLE. YOUR CHOICE.</div>
     <h1>FIND YOUR
-<span>NEXT PAIR.</span></h1>
-
-    <p>Кроссовки, одежда и аксессуары под заказ. Найдём нужную модель по фото или ссылке.</p>
-
-    <a class=«btn» href=«#catalog»>СМОТРЕТЬ КАТАЛОГ ↘</a>
-
-  </section>
-
-  <div class=«benefits»>
-
-    <span>ПОД ЗАКАЗ</span>
-
-    <span>ПОДБОР ПО ФОТО</span>
-
-    <span>СВЯЗЬ В TELEGRAM</span>
-
+<span>STYLE.</span></h1>
+    <p>Оригинальные вещи, кроссовки и аксессуары. Выбирай свой стиль — мы поможем оформить заказ через POIZON.</p>
+    <a class=«btn» href=«#catalog»>СМОТРЕТЬ КАТАЛОГ ↓</a>
   </div>
 
-  <section class=«catalog» id=«catalog»>
-
-    <div class=«section-head»>
-
-      <div>
-
-        <div class=«kicker»>CURATED FOR YOU</div>
-
-        <h2>НАШ КАТАЛОГ</h2>
-
-      </div>
-
-      <div class=«note»>Выбери категорию
-и найди свой стиль.</div>
-
+  <section id=«catalog»>
+    <div class=«section-title»>
+      <h2>КАТАЛОГ</h2>
+      <span>KRAVMA SELECT</span>
     </div>
-
-    <div class=«filters»>
-
-      <button class=«active» onclick=«filterProducts(‘all’,this)»>ВСЁ</button>
-
-      <button onclick=«filterProducts(‘shoes’,this)»>КРОССОВКИ</button>
-
-      <button onclick=«filterProducts(‘clothes’,this)»>ОДЕЖДА</button>
-
-      <button onclick=«filterProducts(‘accessories’,this)»>АКСЕССУАРЫ</button>
-
+    <div class=«categories»>
+      <button class=«category active» data-filter=«all»>ВСЁ</button>
+      <button class=«category» data-filter=«shoes»>ОБУВЬ</button>
+      <button class=«category» data-filter=«clothes»>ОДЕЖДА</button>
+      <button class=«category» data-filter=«accessories»>АКСЕССУАРЫ</button>
     </div>
 
     <div class=«grid»>
+      <article class=«product» data-category=«shoes»>
+        <div class=«product-art»>👟</div>
+        <small>FOOTWEAR / 001</small>
+        <h3>Кроссовки</h3>
 
-      <article class=«card» data-cat=«shoes»>
-
-        <div class=«product-visual»>👟</div>
-
-        <div class=«product-info»>
-
-          <div class=«product-type»>FOOTWEAR</div>
-
-          <h3>Кроссовки</h3>
-
-          <p>Популярные модели под заказ.</p>
-
-          <div class=«price»>От €60</div>
-
-          <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-
-        </div>
-
+<p>Подбери модель и размер под свой стиль.</p>
+        <div class=«price»>Цена по запросу</div>
+        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
       </article>
 
-      <article class=«card» data-cat=«shoes»>
-
-        <div class=«product-visual»>🏀</div>
-
-        <div class=«product-info»>
-
-          <div class=«product-type»>SPORT STYLE</div>
-
-          <h3>Баскетбольные</h3>
-
-          <p>Для площадки и повседневной носки.</p>
-
-          <div class=«price»>От €75</div>
-
-          <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-
-        </div>
-
+      <article class=«product» data-category=«clothes»>
+        <div class=«product-art»>👕</div>
+        <small>APPAREL / 002</small>
+        <h3>Одежда</h3>
+        <p>Повседневные образы и уличный стиль.</p>
+        <div class=«price»>Цена по запросу</div>
+        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
       </article>
 
-      <article class=«card» data-cat=«shoes»>
-
-        <div class=«product-visual»>👞</div>
-
-        <div class=«product-info»>
-
-          <div class=«product-type»>DAILY WEAR</div>
-
-          <h3>Повседневная обувь</h3>
-
-          <p>Подберём модель под твой стиль.</p>
-
-          <div class=«price»>От €55</div>
-
-          <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-
-        </div>
-
+      <article class=«product» data-category=«accessories»>
+        <div class=«product-art»>🧢</div>
+        <small>ACCESSORIES / 003</small>
+        <h3>Аксессуары</h3>
+        <p>Детали, которые завершают твой образ.</p>
+        <div class=«price»>Цена по запросу</div>
+        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
       </article>
 
-      <article class=«card» data-cat=«clothes»>
-
-        <div class=«product-visual»>🧥</div>
-
-        <div class=«product-info»>
-
-          <div class=«product-type»>STREETWEAR</div>
-
-          <h3>Одежда</h3>
-
-          <p>Худи, куртки и вещи для твоего образа.</p>
-
-          <div class=«price»>От €35</div>
-
-          <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-
-        </div>
-
+      <article class=«product» data-category=«shoes»>
+        <div class=«product-art»>👟</div>
+        <small>SPORT / 004</small>
+        <h3>Спортивная обувь</h3>
+        <p>Выбери пару для своего повседневного образа.</p>
+        <div class=«price»>Цена по запросу</div>
+        <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
       </article>
-
-      <article class=«card» data-cat=«clothes»>
-
-        <div class=«product-visual»>👕</div>
-
-        <div class=«product-info»>
-
-          <div class=«product-type»>ESSENTIALS</div>
-
-          <h3>Футболки и худи</h3>
-
-          <p>Подбор размера и модели по запросу.</p>
-
-          <div class=«price»>От €25</div>
-
-          <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-
-        </div>
-
-      </article>
-
-      <article class=«card» data-cat=«accessories»>
-
-        <div class=«product-visual»>👜</div>
-
-        <div class=«product-info»>
-
-          <div class=«product-type»>ACCESSORIES</div>
-
-          <h3>Сумки и аксессуары</h3>
-
-          <p>Сумки, кепки и детали образа.</p>
-
-          <div class=«price»>От €30</div>
-
-          <a class=«order» href=«https://t.me/KravPoizonShopBot»>ЗАКАЗАТЬ ↗</a>
-
-        </div>
-
-      </article>
-
     </div>
-
-    <div class=«custom»>
-
-      <div class=«kicker»>LOOKING FOR SOMETHING ELSE?</div>
-
-      <h2>НЕ НАШЁЛ СВОЙ ТОВАР?</h2>
-
-      <p>Отправь фото или ссылку на нужную модель. Обсудим возможность заказа и уточним стоимость.</p>
-
-      <a class=«btn» href=«https://t.me/KravPoizonShopBot»>НАЙТИ МОЙ ТОВАР ↗</a>
-
-    </div>
-
   </section>
 
+  <section>
+    <h2>КАК ЗАКАЗАТЬ</h2>
+    <p class=«note»>01 — Выбери категорию и модель.
+
+ Нажми «Заказать» и напиши нам.
+
+ Уточним цену, размер и доставку.</p>
+    <a class=«btn» href=«https://t.me/KravPoizonShopBot»>ОТКРЫТЬ В TELEGRAM ↗</a>
+  </section>
 </main>
 
 <footer>
+  <strong>KRAVMA® POIZON SHOP</strong>
 
-  <div class=«footer-inner»>
+OUR STYLE. YOUR CHOICE.
 
-    <div><strong>KRAVMA® POIZON SHOP</strong><b
-UR STYLE. YOUR RULES.</div>
-
-    <div>Заказы и вопросы — через Telegram.<b
-ны ориентировочные и уточняются перед заказом.</div>
-
-  </div>
-
+ены и наличие уточняются перед заказом.
 </footer>
 
 <script>
-
-function filterProducts(category, button) {
-
-  document.querySelectorAll(‘.filters button’).forEach(function (item) {
-
-    item.classList.remove(‘active’);
-
+document.querySelectorAll(‘.category’).forEach(function(button) {
+  button.addEventListener(‘click’, function() {
+    document.querySelectorAll(‘.category’).forEach(function(item) {
+      item.classList.remove(‘active’);
+    });
+    button.classList.add(‘active’);
+    var filter = button.dataset.filter;
+    document.querySelectorAll(‘.product’).forEach(function(product) {
+      product.style.display =
+        filter === ‘all’ || product.dataset.category === filter
+          ? ‘’
+          : ‘none’;
+    });
   });
-
-  button.classList.add(‘active’);
-
-  document.querySelectorAll(‘.card’).forEach(function (card) {
-
-    card.style.display =
-
-      category === ‘all’ || card.dataset.cat === category ? ‘’ : ‘none’;
-
-  });
-
-}
-
+});
 </script>
-
 </body>
-
 </html>
